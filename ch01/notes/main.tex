@@ -52,42 +52,105 @@
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\lettrineabstract{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus nisi ligula. Morbi laoreet ex ligula, vitae lobortis purus mattis vel. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec ac metus ut turpis mollis placerat et nec enim. Duis tristique nibh maximus faucibus facilisis. Praesent in consequat leo. Maecenas condimentum ex rhoncus, elementum diam vel, malesuada ante.}
+\lettrineabstract{Nim is unique. It is multi-paradigm, general purpose programming language with syntax like Python. However, the lanaguage or the design of this programming language does not emphasize on Object Oriented Programming style/concept. The language follows its own programming styling, it is imperative that its syntax styling is kept as guided by Nim's reference manual. Nim focuses mainly on effiency, expressiveness, and elegance. Nim is much like any other programming language with features such as concurrency, parallelism, user-defined types, the standard library, and more. Nim also has Nim's specific features such as asynchronous input/output, metaprogramming, and the foreign function interface.}
 
 %----------------------------------------------------------------------------------------
 %	ARTICLE CONTENTS
 %----------------------------------------------------------------------------------------
 
-\section{Section}
+\section{What is Nim?}
 
-This sentence requires citation \citep{Reference1}. This sentence requires multiple citations to imply that it is better supported \citep{Reference2,Reference3}. Finally, when conducting an appeal to authority, it can be useful to cite a reference in-text, much like \cite{Reference1} do quite a bit. Oh, and make sure to check out the bear in Figure \ref{bear}.
+\begin{figure}[hbt!]
+	\includegraphics[width=0.25\linewidth]{Nim.png} % Figure image
+	%\caption{Nim} % Figure caption
+	\label{nim} % Label for referencing with \ref{bear}
+\end{figure}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus nisi ligula. Morbi laoreet ex ligula, vitae lobortis purus mattis vel. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec ac metus ut turpis mollis placerat et nec enim. Duis tristique nibh maximus faucibus facilisis. Praesent in consequat leo. Maecenas condimentum ex rhoncus, elementum diam vel, malesuada ante. Fusce pulvinar, mauris pretium placerat venenatis, lectus ex tempus lacus, id suscipit libero lorem eu augue. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+Impatience is my vice, I want to know I have the right tools for the job before I commit. So what does this mean?
+\\
+\\
+\textbf{\href{https://exercism.io/tracks/nim/installation}{How to install Nim}}
+\\
+\begin{lstlisting}
+$bash: brew install nim
 
-Aliquam elementum nulla at arcu finibus aliquet. Praesent congue ultrices nisl pretium posuere. Nunc vel nulla hendrerit, ultrices justo ut, ultrices sapien. Duis ut arcu at nunc pellentesque consectetur. Vestibulum eget nisl porta, ultricies orci eget, efficitur tellus. Maecenas rhoncus purus vel mauris tincidunt, et euismod nibh viverra. Mauris ultrices tellus quis ante lobortis gravida. Duis vulputate viverra erat, eu sollicitudin dui. Proin a iaculis massa. Nam at turpis in sem malesuada rhoncus. Aenean tempor risus dui, et ultrices nulla rutrum ut. Nam commodo fermentum purus, eget mattis odio fringilla at. Etiam congue et ipsum sed feugiat. Morbi euismod ut purus et tempus. Etiam est ligula, aliquam eget porttitor ut, auctor in risus. Curabitur at urna id dui lobortis pellentesque.
+==> Pouring nim-0.19.4.mojave.bottle.tar.gz
+/usr/local/Cellar/nim/0.19.4: 411 files, 12.8MB
+\end{lstlisting}
+\newpage
+\textbf{Simple Script}
+\\
+\\
+Create file hello\_world.nim
+\begin{lstlisting}
+#simple comment line
+echo "Hello world!"
+\end{lstlisting}
+\\
+\\
+\textbf{Compile Script}
+\\
+\\
+Compile hello\_world.nim
+\begin{lstlisting}
+$bash: nim compile --run hello_world.nim
+Hint: used config file '/usr/local/Cellar/nim/0.19.4/nim/config/nim.cfg' [Conf]
+Hint: system [Processing]
+Hint: hello_world [Processing]
+CC: hello_world
+CC: stdlib_system
+Hint:  [Link]
+Hint: operation successful (12382 lines compiled; 0.660 sec total; 16.383MiB peakmem; Debug Build) [SuccessX]
+Hint: /Volumes/pulse/100/Nim/ch01/code/hello_world  [Exec]
+Hello world!
+\end{lstlisting}
+\\
+\textbf{Terminal output results}
+\\
+At this stage I try to understand what the terminal is showing and if I cannot make sense of it, I at least try to find out if my output results is as expected.
+\begin{lstlisting}
+Hint: used config file '/usr/local/Cellar/nim/0.19.4/nim/config/nim.cfg' [Conf]
+Hint: system [Processing]
+Hint: hello_world [Processing]
+CC: hello_world 	<--- looks like Nim is using clang
+CC: stdlib_system	<--- looks like Nim is using clang
+Hint:  [Link]
+Hint: operation successful (12382 lines compiled; 0.660 sec total; 16.383MiB peakmem; Debug Build) [SuccessX] <--- processed Nim packages
+Hint: /Volumes/pulse/100/Nim/ch01/code/hello_world  [Exec] <--- script location
+Hello world! <--- Expected output
+\end{lstlisting}
 
-\begin{align}
-	A =
-	\begin{bmatrix}
-		A_{11} & A_{21} \\
-		A_{21} & A_{22}
-	\end{bmatrix}
-\end{align}
+\textbf{What is in the file/script}
 
-Donec nec nibh sagittis, finibus mauris quis, laoreet augue. Maecenas aliquam sem nunc, vel semper urna hendrerit nec. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas pellentesque dolor lacus, sit amet pretium felis vestibulum finibus. Duis tincidunt sapien faucibus nisi vehicula tincidunt. Donec euismod suscipit ligula a tempor. Aenean a nulla sit amet magna ullamcorper condimentum. Fusce eu velit vitae libero varius condimentum at sed dui.
+\begin{lstlisting}
+In the code repo Nim has created some sort of an object file hello_world (machine code) that Nim (JVM if it is running on it) uses to compile and read the script. Languages such as Java, C, C++ uses such approach (compiled languages). Python does not do such (interpreted language).
 
-In non leo tincidunt, tristique orci eu, suscipit ex. Fusce non lectus ut dolor tincidunt fermentum. Donec dictum mauris magna, ut dictum nisl finibus quis. Nulla elementum ipsum ut lectus sodales finibus. Nulla ac malesuada magna. Etiam arcu dolor, luctus eget elit a, volutpat vulputate mi. Donec elementum tellus libero, ut ornare orci dignissim lacinia. Nullam iaculis vehicula sem, at tempor tellus. Praesent eu nisi a elit viverra lobortis. Nullam eu metus et justo molestie posuere vitae imperdiet erat. Praesent at gravida dui. Vivamus mauris odio, efficitur eget lacus quis, mattis tristique risus. Mauris quis metus sed risus lobortis sollicitudin vitae vitae quam. Morbi leo turpis, aliquam at nunc sit amet, ultricies dictum lorem. Nam et fringilla elit. Vestibulum auctor, turpis ut facilisis tempor, arcu nibh tincidunt libero, quis blandit leo turpis a urna.
+$bash: tree -L 1
+		hello_world
+		hello_world.nim
+
+0 directories, 2 files
+\end{lstlisting}
 
 %------------------------------------------------
 
-\subsection{Subsection}
+\subsection{Beginning to learn Nim}
 
-Nam ante risus, tempor nec lacus ac, congue pretium dui. Donec a nisl est. Integer accumsan mauris eu ex venenatis mollis. Aliquam sit amet ipsum laoreet, mollis sem sit amet, pellentesque quam. Aenean auctor diam eget erat venenatis laoreet. In ipsum felis, tristique eu efficitur at, maximus ac urna. Aenean pulvinar eu lorem eget suscipit. Aliquam et lorem erat. Nam fringilla ante risus, eget convallis nunc pellentesque non. Donec ipsum nisl, consectetur in magna eu, hendrerit pulvinar orci. Mauris porta convallis neque, non viverra urna pulvinar ac. Cras non condimentum lectus. Aliquam odio leo, aliquet vitae tellus nec, imperdiet lacinia turpis. Nam ac lectus imperdiet, luctus nibh a, feugiat urna.
+Nim is still a relatively new programming language (first scribbed books ---- Nim in Action, Dominik Picheta).
 
+What should you know going in:
 \begin{itemize}
-	\item First item in a list
-	\item Second item in a list
-	\item Third item in a list
+	\item The language is not fully complete
+	\item Nim is a general-purpose programming language
+	\item effiency, expressiveness and elegance are Nim's standardised priority markers and they rank according to the order mentioned
+	\item Nim shares many of Python's characteristics
+	\item Nim is a compiled language (translated to C first)
+	\item Nim is well suited for systems programming (hardware, OSs, IoT, etc)
+	\item type system, execution model
+	\item Applications that perform I/O operations, such as reading files or sending data over a network, are also well supported by Nim.
+	\item Web applications (web frameworks like Jester)
+	\item Nim can compile JavaScript
+	\item \href{https://github.com/nim-lang/Nim#contributing}{Nim's documentation}
 \end{itemize}
 
 Nunc egestas quis leo sed efficitur. Donec placerat, dui vel bibendum bibendum, tortor ligula auctor elit, aliquet pulvinar leo ante nec tellus. Praesent at vulputate libero, sit amet elementum magna. Pellentesque sodales odio eu ex interdum molestie. Suspendisse lacinia, augue quis interdum posuere, dolor ipsum euismod turpis, sed viverra nibh velit eget dolor. Curabitur consectetur tempus lacus, sit amet luctus mauris interdum vel. Curabitur vehicula convallis felis, eget mattis justo rhoncus eget. Pellentesque et semper lectus.
