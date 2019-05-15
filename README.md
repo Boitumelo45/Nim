@@ -26,45 +26,60 @@ macro    name(param: string) 	untyped	   = body
 -------------------------------------------------------
 
 if x > 5:
-	body
+
+>>> body
+	
 elif y == "Hello":
-	body
+
+>>> body
+
 else:
-	body
+
+>>> body
 
 for item in list:
-	body
+
+>>> body
 
 while x == 5:
-	if y.len > 0:
-		break
-	else:
-		continue
+
+>>> if y.len > 0:
+>>>>>>		break
+>>>	else:
+>>>>>>		continue
 		
 -------------------------------------------------------
 Input/Output
 
 echo(x, 42, "text")
+
 stdout.write("text")
+
 stderr.write("error")
+
 stdin.readLine()
 
 readFile("file.txt")
+
 writeFile("file.txt", "contents")
+
 open("file.txt", fmAppend)
 
 -------------------------------------------------------
 Type definitions
 
 type
-	MyType = object
-		field: int
+>>> MyType = object
+>>>>>>		field: int
 
 type
-	colors = enum
-		Red, Green,
-		Blue, Purple
+>>>	colors = enum
+
+>>>>>>		Red, Green,
+
+>>>>>>		Blue, Purple
 type
-	MyRef = ref object
-		field*:string
+>>>	MyRef = ref object
+
+>>>>>>		field*:string
 
