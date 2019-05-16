@@ -32,7 +32,7 @@
 \author{
 	\authorstyle{Boitumelo Phetla} % Authors
 	\newline\newline % Space before institutions
-	\textsuperscript{1}\institution{General Programming Language}\\ % Institution 1
+	\textsuperscript{1}\institution{General-purpose Programming Language}\\ % Institution 1
 }
 
 % Example of a one line author/institution relationship
@@ -110,6 +110,10 @@ Hello world!
 At this stage I try to understand what the terminal is showing and if I cannot make sense of it, I at least try to find out if my output results is as expected.
 \begin{lstlisting}
 Hint: used config file '/usr/local/Cellar/nim/0.19.4/nim/config/nim.cfg' [Conf]
+		<---- :accessing this directory shows
+			  |------ nim.cfg
+			  |------ nimdoc.cfg
+			  |------ nimdoc.tex.cfg
 Hint: system [Processing]
 Hint: hello_world [Processing]
 CC: hello_world 	<--- looks like Nim is using clang
@@ -146,87 +150,125 @@ What should you know going in:
 	\item Nim shares many of Python's characteristics
 	\item Nim is a compiled language (translated to C first)
 	\item Nim is well suited for systems programming (hardware, OSs, IoT, etc)
+	\item Nim is one of the few languages that uses its own language to interpret itself
 	\item type system, execution model
 	\item Applications that perform I/O operations, such as reading files or sending data over a network, are also well supported by Nim.
 	\item Web applications (web frameworks like Jester)
 	\item Nim can compile JavaScript
+	\item Things that you might be familiar with are covered in Nim (procedures, methods, iterators, generics and templates)
 	\item \href{https://github.com/nim-lang/Nim#contributing}{Nim's documentation}
 \end{itemize}
 
-Nunc egestas quis leo sed efficitur. Donec placerat, dui vel bibendum bibendum, tortor ligula auctor elit, aliquet pulvinar leo ante nec tellus. Praesent at vulputate libero, sit amet elementum magna. Pellentesque sodales odio eu ex interdum molestie. Suspendisse lacinia, augue quis interdum posuere, dolor ipsum euismod turpis, sed viverra nibh velit eget dolor. Curabitur consectetur tempus lacus, sit amet luctus mauris interdum vel. Curabitur vehicula convallis felis, eget mattis justo rhoncus eget. Pellentesque et semper lectus.
-
+\newpage
+\subsection{Why should you use Nim}
 \begin{description}
-	\item[First] This is the first item
-	\item[Last] This is the last item
+	\item[Python, C, C++, ObjC, JavaScript] $\longrightarrow$ Nim's design follows that of Python with the capability to perform foreign interfacing (C, C++, ObjectiveC)
+	\item[Nim projected started in 2005] $\longrightarrow$  The language is 14 years old, so you will be some sort of an early adopter
+	\item[Garbage collector] $\longrightarrow$  Garbage collection + manual memory management
+	\item[Game developers] $\longrightarrow$  because of a garbage collector that can be turned on and off this is a useful application for GameDevs
+	\item[Scientific computing] $\longrightarrow$  Data Scientists
+	\item[Scripting] $\longrightarrow$  Clue codes
+	\item[Operating Systems] $\longrightarrow$  Supports Windows, Linux, Unix
+	\item[effiency] $\longrightarrow$  Nim focues on compile-time mechanisms (runtime becomes effient)
+	\item[Package manager] $\longrightarrow$   Nimble
+	\item[Environments to use Nim] $\longrightarrow$  Web applications, Kernel
+	\item[Andreas Rumpf] $\longrightarrow$  Andreas Rumpf is the designer of Nimrod programming language, which he develops in his spare time. He is a software engineer working at a top secret company and constantly attempts to create his own start-up which he will allow himself to program in Nimrod full-time. He has programmed in various programming languages over the years (including quite obscure ones) without being satisfied with any of them. Andreas Rumpf holds a degree in Computer Science which he obtained from the University of Kaiserslautern.
 \end{description}
 
-Donec nec nibh sagittis, finibus mauris quis, laoreet augue. Maecenas aliquam sem nunc, vel semper urna hendrerit nec. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas pellentesque dolor lacus, sit amet pretium felis vestibulum finibus. Duis tincidunt sapien faucibus nisi vehicula tincidunt. Donec euismod suscipit ligula a tempor. Aenean a nulla sit amet magna ullamcorper condimentum. Fusce eu velit vitae libero varius condimentum at sed dui.
-
+\href{https://github.com/nim-lang/Nim#contributing}{The compiler, standard library, and related tools are all open source and written in Nim.}
 %------------------------------------------------
 
-\subsection{Subsection}
-
-In hac habitasse platea dictumst. Etiam ac tortor fermentum, ultrices libero gravida, blandit metus. Vivamus sed convallis felis. Cras vel tortor sollicitudin, vestibulum nisi at, pretium justo. Curabitur placerat elit nunc, sed luctus ipsum auctor a. Nulla feugiat quam venenatis nulla imperdiet vulputate non faucibus lorem. Curabitur mollis diam non leo ullamcorper lacinia.
-
-Morbi iaculis posuere arcu, ut scelerisque sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris placerat urna id enim aliquet, non consequat leo imperdiet. Phasellus at nibh ut tortor hendrerit accumsan. Phasellus sollicitudin luctus sapien, feugiat facilisis risus consectetur eleifend. In quis luctus turpis. Nulla sed tellus libero. Pellentesque metus tortor, convallis at tellus quis, accumsan faucibus nulla. Fusce auctor eleifend volutpat. Maecenas vel faucibus enim. Donec venenatis congue congue. Integer sit amet quam ac est aliquam aliquet. Ut commodo justo sit amet convallis scelerisque.
+\subsection{Core features of Nim}
 
 \begin{enumerate}
-	\item First numbered item in a list
-	\item Second numbered item in a list
-	\item Third numbered item in a list
+	\item Metaprogramming $\longrightarrow$ Read, Generate, Analyze and Transform source code
+	\item Style-insensitive $\longrightarrow$ camelCase or snake\_case
+	\item Compilation to C $\longrightarrow$ enhances the language's performance
 \end{enumerate}
 
-Aliquam elementum nulla at arcu finibus aliquet. Praesent congue ultrices nisl pretium posuere. Nunc vel nulla hendrerit, ultrices justo ut, ultrices sapien. Duis ut arcu at nunc pellentesque consectetur. Vestibulum eget nisl porta, ultricies orci eget, efficitur tellus. Maecenas rhoncus purus vel mauris tincidunt, et euismod nibh viverra. Mauris ultrices tellus quis ante lobortis gravida. Duis vulputate viverra erat, eu sollicitudin dui. Proin a iaculis massa. Nam at turpis in sem malesuada rhoncus. Aenean tempor risus dui, et ultrices nulla rutrum ut. Nam commodo fermentum purus, eget mattis odio fringilla at. Etiam congue et ipsum sed feugiat. Morbi euismod ut purus et tempus. Etiam est ligula, aliquam eget porttitor ut, auctor in risus. Curabitur at urna id dui lobortis pellentesque.
-
-\begin{table}
-	\caption{Example table}
-	\centering
-	\begin{tabular}{llr}
-		\toprule
-		\multicolumn{2}{c}{Name} \\
-		\cmidrule(r){1-2}
-		First Name & Last Name & Grade \\
-		\midrule
-		John & Doe & $7.5$ \\
-		Richard & Miles & $5$ \\
-		\bottomrule
-	\end{tabular}
-\end{table}
-
-%------------------------------------------------
-
-\section{Section}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{bear.jpg} % Figure image
-	\caption{A majestic grizzly bear} % Figure caption
-	\label{bear} % Label for referencing with \ref{bear}
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{compiler.png} % Figure image
+	\caption{compilers} % Figure caption
+	\label{Nim Compilers} % Label for referencing with \ref{bear}
 \end{figure}
+\newpage
 
-In hac habitasse platea dictumst. Vivamus eu finibus leo. Donec malesuada dui non sagittis auctor. Aenean condimentum eros metus. Nunc tempus id velit ut tempus. Quisque fermentum, nisl sit amet consectetur ornare, nunc leo luctus leo, vitae mattis odio augue id libero. Mauris quis lectus at ante scelerisque sollicitudin in eu nisi. Nulla elit lacus, ultricies eu erat congue, venenatis semper turpis. Ut nec venenatis velit. Mauris lacinia diam diam, ac egestas neque sodales sed. Curabitur eu diam nulla. Duis nec turpis finibus, commodo diam sed, bibendum erat. Nunc in velit ullamcorper, posuere libero a, mollis mauris. Nulla vehicula quam id tortor ornare blandit. Aenean maximus tempor orci ultrices placerat. Aenean condimentum magna vulputate erat mattis feugiat.
+\subsection{Metaprogramming}
 
-Quisque lacinia, purus id mattis gravida, sem enim fringilla erat, non dapibus est tellus pellentesque velit. Vivamus pretium sem quis leo placerat, at dignissim ex iaculis. Donec neque tortor, pharetra quis vestibulum id, tempus scelerisque mi. Cras in mattis est. Integer nec lorem rutrum, semper ligula bibendum, iaculis neque. Sed in nunc placerat, viverra dui in, fringilla sem. Sed quis rutrum magna, vitae pellentesque eros.
+Metaprogramming is the writing of computer programs with the ability to treat programs as their data. It means that a program could be designed to read, generate, analyse and/or transform other programs, and even modify itself while running. \href{https://hookrace.net/blog/introduction-to-metaprogramming-in-nim/}{HookRace blog}
 
-Praesent maximus mauris vitae nisl pulvinar, at tristique tortor aliquam. Etiam sit amet nunc in nulla vulputate sollicitudin. Aliquam erat volutpat. Praesent pharetra gravida cursus. Quisque vulputate lacus nunc. Integer orci ex, porttitor quis sapien id, eleifend gravida mi. Etiam efficitur justo eget nulla congue mattis. Duis commodo vel arcu a pretium. Aenean eleifend viverra nisl, nec ornare lacus rutrum in.
 
-Vivamus pulvinar ac eros eu pellentesque. Duis nibh felis, sagittis sed lacus at, sagittis mattis nisi. Fusce ante dui, tincidunt in scelerisque ut, sagittis at magna. Fusce tincidunt felis et odio tincidunt imperdiet. Cras ut facilisis nisl. Aliquam vitae consequat metus, eget gravida augue. In imperdiet justo quis nulla venenatis accumsan. Aliquam aliquet consectetur tortor, at sollicitudin sapien porta sed. Donec efficitur mauris id rhoncus volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed bibendum purus dapibus tincidunt euismod. Nullam malesuada ultrices lacus, ut tincidunt dolor. Etiam imperdiet quam eget elit tincidunt scelerisque. Curabitur ut ullamcorper dui. Cras gravida porta leo, ut lobortis nisl venenatis pulvinar. Proin non semper nulla.
+\begin{itemize}
+	\item Normal procs and inline iterators
+	\item Generic procs  and closure iterators
+	\item Templates
+	\item Macros
+\end{itemize}
 
-Praesent pretium nisl purus, id mollis nibh efficitur sed. Sed sit amet urna leo. Nulla sed imperdiet sem. Donec ut diam tristique, faucibus ligula vel, varius est. In ipsum ligula, elementum vitae velit ac, viverra tincidunt enim. Phasellus gravida diam id nisl interdum maximus. Ut semper, tortor vitae congue pharetra, justo odio commodo urna, vel tempus libero ex et risus. Vivamus commodo felis non venenatis rutrum. Sed pulvinar scelerisque augue in porta. Sed maximus libero nec tellus malesuada elementum. Proin non augue posuere, pellentesque felis viverra, varius urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim urna eget diam dictum, eget facilisis libero pulvinar.
+With Nim's metaprogramming capabilities you are able to write domain-specific languages (DSL) shown below in simple few lines.
 
-Aliquam ex tellus, hendrerit sed odio sit amet, facilisis elementum enim. Suspendisse potenti. Integer molestie ac augue sit amet fermentum. Vivamus ultrices ante nulla, vitae venenatis ipsum ullamcorper sed. Phasellus gravida felis sapien, ac porta purus pharetra quis. Sed eget augue tellus. Nam vitae hendrerit arcu, id iaculis ipsum. Pellentesque sed magna tortor.
+\begin{lstlisting}
+echo("<html>")
+echo("  <body>")
+echo("    <p>Hello World</p>")
+echo("  </body>")
+echo("</html>")
 
-In ac tempus diam. Sed nec lobortis massa, suscipit accumsan justo. Quisque porttitor, ligula a semper euismod, urna diam dictum sem, sed maximus risus purus sit amet felis. Fusce elementum maximus nisi a mattis. Nulla vitae elit erat. Integer sit amet commodo risus, eget elementum nulla. Donec ultricies erat sit amet sem commodo iaculis. Donec euismod volutpat lacus, ut tempor est lacinia a. Vivamus auctor condimentum tincidunt. Praesent sed finibus urna. Sed pellentesque blandit magna et rhoncus.
+output:
+<html>
+  <body>
+    <p>Hello World</p>
+  </body>
+</html>
+\end{lstlisting}
 
-Integer vel turpis nec tellus sodales malesuada a vel odio. Fusce et lectus eu nibh rhoncus tempus vel nec elit. Suspendisse commodo orci velit, lacinia dictum odio accumsan et. Vivamus libero dui, elementum vel nibh non, fermentum venenatis risus. Aliquam sed sapien ac orci sodales tempus a eget dui. Morbi non dictum tortor, quis tincidunt nibh. Proin ut tincidunt odio.
 
-Pellentesque ac nisi dolor. Pellentesque maximus est arcu, eu scelerisque est rutrum vitae. Mauris ullamcorper vulputate vehicula. Praesent fermentum leo ac velit accumsan consectetur. Aliquam eleifend ex eros, ut lacinia tellus volutpat non. Pellentesque sit amet cursus diam. Maecenas elementum mattis est, in tincidunt ex pretium ac. Integer ultrices nunc rutrum, pretium sapien vitae, lobortis velit.
+\subsubsection{Normal procs (Functions)}
 
-%----------------------------------------------------------------------------------------
+\begin{lstlisting}
+#declare function
+proc stationName(station: string) =
+			echo "Analyzing " , station, " station"
+
+#call function
+stationName("Westergloor")      # f(a)
+"Azaadville".stationName        # a.f = f(a)
+stationName "Mohlakeng"         # f a
+
+output:
+Analyzing Westergloor station
+Analyzing Azaadville station
+Analyzing Mohlakeng station
+\end{lstlisting}
+
+\subsubsection{What does style insensitive mean?}
+
+Notice the use of method to\_upper\(\) and toUpper\(\) executes
+the same thing, but adopts snake\_case and camelCase.
+
+\begin{lstlisting}
+#style insensitive
+import strutils
+
+proc nameFormat(fm: string, name: string) =
+  if fm == "Y":
+    echo "called toUpper() : " , name.toUpper()
+  else:
+    echo "called to_upper(): " ,name.to_upper()
+
+nameFormat("Y", "john")
+nameFormat("N", "john")
+
+output:
+called toUpper() : JOHN
+called to_upper(): JOHN
+\end{lstlisting}
+%-------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \printbibliography[title={Bibliography}] % Print the bibliography, section title in curly brackets
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \end{document}
