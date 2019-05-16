@@ -32,7 +32,7 @@
 \author{
 	\authorstyle{Boitumelo Phetla} % Authors
 	\newline\newline % Space before institutions
-	\textsuperscript{1}\institution{General Programming Language}\\ % Institution 1
+	\textsuperscript{1}\institution{General-purpose Programming Language}\\ % Institution 1
 }
 
 % Example of a one line author/institution relationship
@@ -110,6 +110,10 @@ Hello world!
 At this stage I try to understand what the terminal is showing and if I cannot make sense of it, I at least try to find out if my output results is as expected.
 \begin{lstlisting}
 Hint: used config file '/usr/local/Cellar/nim/0.19.4/nim/config/nim.cfg' [Conf]
+		<---- :accessing this directory shows
+			  |------ nim.cfg
+			  |------ nimdoc.cfg
+			  |------ nimdoc.tex.cfg
 Hint: system [Processing]
 Hint: hello_world [Processing]
 CC: hello_world 	<--- looks like Nim is using clang
@@ -146,34 +150,40 @@ What should you know going in:
 	\item Nim shares many of Python's characteristics
 	\item Nim is a compiled language (translated to C first)
 	\item Nim is well suited for systems programming (hardware, OSs, IoT, etc)
+	\item Nim is one of the few languages that uses its own language to interpret itself
 	\item type system, execution model
 	\item Applications that perform I/O operations, such as reading files or sending data over a network, are also well supported by Nim.
 	\item Web applications (web frameworks like Jester)
 	\item Nim can compile JavaScript
+	\item Things that you might be familiar with are covered in Nim (procedures, methods, iterators, generics and templates)
 	\item \href{https://github.com/nim-lang/Nim#contributing}{Nim's documentation}
 \end{itemize}
 
-Nunc egestas quis leo sed efficitur. Donec placerat, dui vel bibendum bibendum, tortor ligula auctor elit, aliquet pulvinar leo ante nec tellus. Praesent at vulputate libero, sit amet elementum magna. Pellentesque sodales odio eu ex interdum molestie. Suspendisse lacinia, augue quis interdum posuere, dolor ipsum euismod turpis, sed viverra nibh velit eget dolor. Curabitur consectetur tempus lacus, sit amet luctus mauris interdum vel. Curabitur vehicula convallis felis, eget mattis justo rhoncus eget. Pellentesque et semper lectus.
-
+\newpage
+\subsection{Why should you use Nim}
 \begin{description}
-	\item[First] This is the first item
-	\item[Last] This is the last item
+	\item[Python, C, C++, ObjC, JavaScript] $\longrightarrow$ Nim's design follows that of Python with the capability to perform foreign interfacing (C, C++, ObjectiveC)
+	\item[Nim projected started in 2005] $\longrightarrow$  The language is 14 years old, so you will be some sort of an early adopter
+	\item[Garbage collector] $\longrightarrow$  Garbage collection + manual memory management
+	\item[Game developers] $\longrightarrow$  because of a garbage collector that can be turned on and off this is a useful application for GameDevs
+	\item[Scientific computing] $\longrightarrow$  Data Scientists
+	\item[Scripting] $\longrightarrow$  Clue codes
+	\item[Operating Systems] $\longrightarrow$  Supports Windows, Linux, Unix
+	\item[effiency] $\longrightarrow$  Nim focues on compile-time mechanisms (runtime becomes effient)
+	\item[Package manager] $\longrightarrow$   Nimble
+	\item[Environments to use Nim] $\longrightarrow$  Web applications, Kernel
+	\item[Andreas Rumpf] $\longrightarrow$  Andreas Rumpf is the designer of Nimrod programming language, which he develops in his spare time. He is a software engineer working at a top secret company and constantly attempts to create his own start-up which he will allow himself to program in Nimrod full-time. He has programmed in various programming languages over the years (including quite obscure ones) without being satisfied with any of them. Andreas Rumpf holds a degree in Computer Science which he obtained from the University of Kaiserslautern.
 \end{description}
 
-Donec nec nibh sagittis, finibus mauris quis, laoreet augue. Maecenas aliquam sem nunc, vel semper urna hendrerit nec. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas pellentesque dolor lacus, sit amet pretium felis vestibulum finibus. Duis tincidunt sapien faucibus nisi vehicula tincidunt. Donec euismod suscipit ligula a tempor. Aenean a nulla sit amet magna ullamcorper condimentum. Fusce eu velit vitae libero varius condimentum at sed dui.
-
+\href{https://github.com/nim-lang/Nim#contributing}{The compiler, standard library, and related tools are all open source and written in Nim. The project is available on GitHub, and everyone is encouraged to contribute. Contributing to Nim is a good way to learn how it works and to help with its development.}
 %------------------------------------------------
 
-\subsection{Subsection}
-
-In hac habitasse platea dictumst. Etiam ac tortor fermentum, ultrices libero gravida, blandit metus. Vivamus sed convallis felis. Cras vel tortor sollicitudin, vestibulum nisi at, pretium justo. Curabitur placerat elit nunc, sed luctus ipsum auctor a. Nulla feugiat quam venenatis nulla imperdiet vulputate non faucibus lorem. Curabitur mollis diam non leo ullamcorper lacinia.
-
-Morbi iaculis posuere arcu, ut scelerisque sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris placerat urna id enim aliquet, non consequat leo imperdiet. Phasellus at nibh ut tortor hendrerit accumsan. Phasellus sollicitudin luctus sapien, feugiat facilisis risus consectetur eleifend. In quis luctus turpis. Nulla sed tellus libero. Pellentesque metus tortor, convallis at tellus quis, accumsan faucibus nulla. Fusce auctor eleifend volutpat. Maecenas vel faucibus enim. Donec venenatis congue congue. Integer sit amet quam ac est aliquam aliquet. Ut commodo justo sit amet convallis scelerisque.
+\subsection{Core features of Nim}
 
 \begin{enumerate}
-	\item First numbered item in a list
-	\item Second numbered item in a list
-	\item Third numbered item in a list
+	\item Metaprogramming $\longrightarrow$ customizing Nim
+	\item Style-insensitive $\longrightarrow$ camelCase or snake\_case
+	\item Compilation to C $\longrightarrow$ enhances the language's performance
 \end{enumerate}
 
 Aliquam elementum nulla at arcu finibus aliquet. Praesent congue ultrices nisl pretium posuere. Nunc vel nulla hendrerit, ultrices justo ut, ultrices sapien. Duis ut arcu at nunc pellentesque consectetur. Vestibulum eget nisl porta, ultricies orci eget, efficitur tellus. Maecenas rhoncus purus vel mauris tincidunt, et euismod nibh viverra. Mauris ultrices tellus quis ante lobortis gravida. Duis vulputate viverra erat, eu sollicitudin dui. Proin a iaculis massa. Nam at turpis in sem malesuada rhoncus. Aenean tempor risus dui, et ultrices nulla rutrum ut. Nam commodo fermentum purus, eget mattis odio fringilla at. Etiam congue et ipsum sed feugiat. Morbi euismod ut purus et tempus. Etiam est ligula, aliquam eget porttitor ut, auctor in risus. Curabitur at urna id dui lobortis pellentesque.
