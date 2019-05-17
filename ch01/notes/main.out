@@ -5,4 +5,7 @@
 \BOOKMARK [2][-]{subsection.1.4}{Metaprogramming}{section.1}% 5
 \BOOKMARK [3][-]{subsubsection.1.4.1}{Normal procs \(Functions\)}{subsection.1.4}% 6
 \BOOKMARK [3][-]{subsubsection.1.4.2}{What does style insensitive mean?}{subsection.1.4}% 7
-\BOOKMARK [3][-]{subsubsection.1.4.3}{Foreign language interface}{subsection.1.4}% 8
+\BOOKMARK [2][-]{subsection.1.5}{Foreign language interface}{section.1}% 8
+\BOOKMARK [3][-]{subsubsection.1.5.1}{nim compile to JavaScript}{subsection.1.5}% 9
+\BOOKMARK [3][-]{subsubsection.1.5.2}{nim compile to C}{subsection.1.5}% 10
+\BOOKMARK [3][-]{subsubsection.1.5.3}{nim compile to ObjectiveC}{subsection.1.5}% 11

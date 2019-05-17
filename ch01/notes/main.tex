@@ -242,7 +242,7 @@ Analyzing Westergloor station
 Analyzing Azaadville station
 Analyzing Mohlakeng station
 \end{lstlisting}
-\newpage
+
 \subsubsection{What does style insensitive mean?}
 
 Notice the use of method to\_upper\(\) and toUpper\(\) executes
@@ -266,11 +266,57 @@ called toUpper() : JOHN
 called to_upper(): JOHN
 \end{lstlisting}
 
-\subsubsection{Foreign language interface}
+\subsection{Foreign language interface}
 
+\subsubsection{nim compile to JavaScript}
 \begin{lstlisting}
 nim js -d:nodejs [name of script].nim
-nim objc --cpu:amd64 --os:macosx --compile_only --gen_script [name of script *without the extension]
+\end{lstlisting}
+
+Compiling the code creeates a nimcache directory within the current working directory and generates the JavaScript script in it.
+
+\begin{lstlisting}
+tree nimcache
+nimcache/
+		  |__________  fn1.js
+\end{lstlisting}
+
+\subsubsection{nim compile to C}
+
+
+
+\begin{lstlisting}
+nim -c -d:release c fn1
+\end{lstlisting}
+
+The converted C code is stored in the home directory under a hidden file (.cache/nim). It is usually assigned the same name as the nim script name with an suffix underscore some letter.
+
+\begin{lstlisting}
+bash$: cd $HOME/.cache/nim
+tree 
+  |______ fn1_r/
+    	     	 |__________ fn1.c
+		 		 |__________ fn1.json
+		 		 |__________ stdlib_system.c
+1 directory, 3 files
+\end{lstlisting}
+
+\subsubsection{nim compile to ObjectiveC}
+
+\begin{lstlisting}
+nim objc --cpu:amd64 --os:macosx --compile_only --gen_script [script name] 
+\end{lstlisting}
+
+The converted objective C code is stored in the home directory under a hidden file (.cache/nim). It is usually assigned the same name as the nim script name with an suffix underscore some letter.
+
+\begin{lstlisting}
+fn1_d/
+		|__________compile_fn1.sh
+		|__________fn1.deps
+		|__________fn1.json
+		|__________fn1.m
+		|__________nimbase.h
+		|__________stdlib_system.m
 \end{lstlisting}
 
 %-------------------------------------------------------------------------------
