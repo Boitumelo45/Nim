@@ -265,6 +265,14 @@ output:
 called toUpper() : JOHN
 called to_upper(): JOHN
 \end{lstlisting}
+
+\subsubsection{Foreign language interface}
+
+\begin{lstlisting}
+nim js -d:nodejs [name of script].nim
+nim objc --cpu:amd64 --os:macosx --compile_only --gen_script [name of script *without the extension]
+\end{lstlisting}
+
 %-------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %-------------------------------------------------------------------------------
