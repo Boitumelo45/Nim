@@ -188,7 +188,7 @@ What should you know going in:
 
 \begin{figure}[h!]
 	\includegraphics[width=\linewidth]{compiler.png} % Figure image
-	\caption{compilers} % Figure caption
+	\caption{Compilation backends} % Figure caption
 	\label{Nim Compilers} % Label for referencing with \ref{bear}
 \end{figure}
 \newpage
@@ -266,6 +266,47 @@ called toUpper() : JOHN
 called to_upper(): JOHN
 \end{lstlisting}
 
+
+Nim is a static type system programming language with some dynamic type system interfacing (or supporting) to enable both free-error-proned language and less hindrance to development/writing code. Languages that are dynamically typed are languages like python. Basically, the meaning is that your variables, functions and data structures are not primitively declared or typed to a certain primitive data type (float, int, string, etc). The data assigned to your function will dynamically assign a primitive data type to your function or variable.
+
+\begin{lstlisting}
+def array(argument, *args):
+    #**args, argument <--not assigned any type
+	flag = False
+	if argument in args:
+		print("Item found")
+		flag = True
+	else:
+		for item in args:
+			print(item)
+	return flag <--returns a boolean
+
+if __name__ == "__main__":
+	#search 1 in 2, 3, 4, 5, 6
+	#return false if not found or true if found
+	flag = array(1, 2, 3, 4, 5, 6)
+	print(flag)
+\end{lstlisting}
+
+The code above shows how powerful dynamically typed languages are. However, Nim likes to argue that their static type structure is as powerful unless you employ *ptrs from C that are not so friendly on memory saving. How does Nim take care of its performance? 
+\begin{itemize}
+	\item Arrays are bounds-checked at compile time, or at runtime when compile-time checks aren’t possible, preventing both buffer overflows and buffer overreads.
+	\item Pointer arithmetic isn’t possible for reference types as they’re entirely managed by Nim’s garbage collector; this prevents issues such as dangling pointers and other memory issues related to managing memory manually.
+	\item Variables are always initialized by Nim to their default values, which prevents variables containing unexpected and corrupt data.
+\end{itemize}
+
+\subsection{Generic Programming}
+
+This is a feature that is rather unique and interesting, the ability to generically chose whether a typed variable can be used as one type or the other. 
+
+\begin{lstlisting}
+proc intFloat(number: int | float) =
+    echo(number)
+
+intFloat(2)     #f(a)
+intFloat 2.2    #f a
+3.14.intFloat   #a.f
+\end{lstlisting}
 \subsection{Foreign language interface}
 
 \subsubsection{nim compile to JavaScript}
@@ -319,6 +360,94 @@ fn1_d/
 		|__________stdlib_system.m
 \end{lstlisting}
 
+\subsection{Why does Nim compile to C}
+
+The C programming language is very well established as a systems programming language and has been in use for over 40 years. C is one of the most portable pro- gramming languages, with multiple implementations for Windows, Linux, Mac OS, x86, AMD64, ARM, and many other, more obscure OSs and platforms. C compilers sup- port everything from supercomputers to microcontrollers. They’re also very mature and implement many powerful optimizations, which makes C very efficient.
+\\
+\\
+Nim takes advantage of these aspects of C, including its portability, widespread use, and efficiency.
+Compiling to C also makes it easy to use existing C and C++ libraries—all you need to do is write some simple wrapper code. You can write this code much faster by using a tool called \textbf{c2nim}. This tool converts C and C++ header files to Nim code, which wraps those files. This is of great benefit because many popular libraries are written in C and C++.
+
+\subsection{Nim's Garbage collector} 
+
+Switching between garbage collectors is easy. You just need to specify the --gc:<gc\_name> flag during compilation and replace <gc\_name> with markandsweep, boehm, or none.
+
+
+\subsection{Nim's compilation lifecycle} 
+
+\begin{figure}[h!]
+	\includegraphics[width=0.8\linewidth]{nim_lifecycle.png} % Figure image
+	\caption{Compilation lifecycle} % Figure caption
+	\label{Nim Compilers} % Label for referencing with \ref{bear}
+\end{figure}
+
+\subsection{Nim benefits} 
+
+\subsubsection{Efficiency} 
+\begin{enumerate}
+	\item Nim has performance similar to C.
+	\item Nim results in software that’s more reliable than software written in C. 
+	\item Nim features an improved type system.
+	\item Nim supports generics.
+	\item Nim implements an advanced form of metaprogramming.
+\end{enumerate}
+
+\subsubsection{Where and why I should use Nim} 
+\textbf{Picking Nim as a C replacement makes a lot of sense.}
+
+\subsubsection{Nim is clean and readable}
+
+Nim class
+\begin{lstlisting}
+#class declaration
+type
+    Dog = object
+
+#class method
+proc bark(self: Dog) = echo("Woof!!")
+
+#instantiation
+let dog = Dog()
+dog.bark()
+\end{lstlisting}
+
+Python class 
+
+\begin{lstlisting}
+class Dog(object):	#class
+    def bark(self):	#class method
+        print("Woof!!")
+
+if __name__ == "__main__":
+    dog = Dog()	#instantiation
+    dog.bark()	   #calling class method
+
+\end{lstlisting}
+
+\subsection{Nim simple code snippets}
+\begin{lstlisting}
+#simple for loop
+let list = ["pineapple", "banana", "apple", "orange", "lemon"]
+
+for i in list:
+  echo(i)
+\end{lstlisting}
+
+\begin{lstlisting}
+import strutils
+
+let names = @["John Doe", "John X", "John C"]
+
+var count = 0
+for name in names:
+    count += 1
+    echo("[", count, "] ", name.split[1])
+
+Output:
+[1] Doe
+[2] X
+[3] C
+\end{lstlisting}
 %-------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %-------------------------------------------------------------------------------

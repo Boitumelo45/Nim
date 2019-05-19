@@ -5,7 +5,16 @@
 \BOOKMARK [2][-]{subsection.1.4}{Metaprogramming}{section.1}% 5
 \BOOKMARK [3][-]{subsubsection.1.4.1}{Normal procs \(Functions\)}{subsection.1.4}% 6
 \BOOKMARK [3][-]{subsubsection.1.4.2}{What does style insensitive mean?}{subsection.1.4}% 7
-\BOOKMARK [2][-]{subsection.1.5}{Foreign language interface}{section.1}% 8
-\BOOKMARK [3][-]{subsubsection.1.5.1}{nim compile to JavaScript}{subsection.1.5}% 9
-\BOOKMARK [3][-]{subsubsection.1.5.2}{nim compile to C}{subsection.1.5}% 10
-\BOOKMARK [3][-]{subsubsection.1.5.3}{nim compile to ObjectiveC}{subsection.1.5}% 11
+\BOOKMARK [2][-]{subsection.1.5}{Generic Programming}{section.1}% 8
+\BOOKMARK [2][-]{subsection.1.6}{Foreign language interface}{section.1}% 9
+\BOOKMARK [3][-]{subsubsection.1.6.1}{nim compile to JavaScript}{subsection.1.6}% 10
+\BOOKMARK [3][-]{subsubsection.1.6.2}{nim compile to C}{subsection.1.6}% 11
+\BOOKMARK [3][-]{subsubsection.1.6.3}{nim compile to ObjectiveC}{subsection.1.6}% 12
+\BOOKMARK [2][-]{subsection.1.7}{Why does Nim compile to C}{section.1}% 13
+\BOOKMARK [2][-]{subsection.1.8}{Nim's Garbage collector}{section.1}% 14
+\BOOKMARK [2][-]{subsection.1.9}{Nim's compilation lifecycle}{section.1}% 15
+\BOOKMARK [2][-]{subsection.1.10}{Nim benefits}{section.1}% 16
+\BOOKMARK [3][-]{subsubsection.1.10.1}{Efficiency}{subsection.1.10}% 17
+\BOOKMARK [3][-]{subsubsection.1.10.2}{Where and why I should use Nim}{subsection.1.10}% 18
+\BOOKMARK [3][-]{subsubsection.1.10.3}{Nim is clean and readable}{subsection.1.10}% 19
+\BOOKMARK [2][-]{subsection.1.11}{Nim simple code snippets}{section.1}% 20
