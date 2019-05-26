@@ -1,4 +1,4 @@
-import sequtils, sugar, strutils
+import strutils, sugar, sequtils
 
 let list = @["John Doe", "Malcom X", "Alpha Romeo"]
 for i in list.map(
@@ -7,10 +7,10 @@ for i in list.map(
   echo(i)
 
 
-echo("\tFirst names:")
+echo("First names:")
 for fname in list:
   echo(fname.split[0])
 
-echo("\tSecond names:")
+echo("Last names:")
 for lname in list:
   echo(lname.split[1])
